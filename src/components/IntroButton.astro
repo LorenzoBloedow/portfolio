@@ -1,0 +1,60 @@
+---
+import Button from "./Button.astro";
+---
+
+<Button
+text="Show Me"
+color="primary"
+id="intro-button"
+shadow
+/>
+
+<style is:global>
+    #intro-text:has(+ #intro-button:hover) {
+        font-variation-settings: "YEAR" 2050;
+    }
+</style>
+
+<script>
+    import gsap from "gsap";
+
+    const button = document.getElementById("intro-button");
+
+    button?.addEventListener("pointerup", () => {
+        gsap.to("#intro-button", {
+            backgroundColor: "rgba(0, 0, 0, 0)",
+            color: "rgba(0, 0, 0, 0)",
+            duration: 0.5,
+            ease: "power4.out",
+            onComplete: () => {
+                button.remove();
+            }
+        });
+        gsap.to("#intro-text", {
+            scale: 10,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power4.out",
+            onComplete: () => {
+                const introText = document.getElementById("intro-text");
+
+                introText?.remove();
+
+                gsap.to("#home-bg-gradient", {
+                    opacity: 1,
+                    translateY: 0,
+                    duration: 3
+                })
+                gsap.to("#navbar", {
+                    translateY: 0,
+                    duration: 3,
+                    ease: "elastic.out(1, 0.3)",
+                    onStart: () => {
+                        const intro = document.getElementById("intro");
+                        intro?.remove();
+                    }
+                });
+            }
+        });
+    });
+</script>

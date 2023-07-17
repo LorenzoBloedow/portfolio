@@ -1,0 +1,101 @@
+---
+import Intro from "../components/Intro.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+    <div
+    id="home-bg-gradient"
+    class="fixed top-0 left-0 w-screen h-screen -z-10 opacity-0 trasnlate-y-52"
+    style={{
+        background: "linear-gradient(180deg, white, var(--accent))"
+    }}
+    />
+
+    <Intro />
+</BaseLayout>
+
+<style is:global>
+    #intro-text {
+        font-variation-settings: "YEAR" 2000;
+        transition: font-variation-settings 3s ease-in-out;
+    }
+
+    #intro-text > span {
+        animation: 2s ease-in-out 1 fadein;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        color: var(--secondary);
+    }
+
+    #intro-button {
+        animation: 1.5s ease-in-out 1 fadeinbutton;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        position: relative;
+        top: 2rem;
+    }
+
+    #intro-text span:nth-child(2) {
+        animation-delay: 200ms;
+    }
+
+    #intro-text span:nth-child(3) {
+        animation-delay: 300ms;
+    }
+
+    #intro-text span:nth-child(4) {
+        animation-delay: 400ms;
+    }
+
+    #intro-text span:nth-child(5) {
+        animation-delay: 500ms;
+    }
+
+    #intro-text span:nth-child(6) {
+        animation-delay: 600ms;
+    }
+
+    #intro-button {
+        animation-delay: 1000ms
+    }
+
+    @keyframes fadein {
+        from {
+            opacity: 0
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes fadeinbutton {
+        from {
+            opacity: 0;
+            top: 2rem;
+        }
+
+        to {
+            opacity: 1;
+            top: 0rem;
+        }
+    }
+</style>
+
+<script>
+    // import gsap from "gsap";
+    // import { ScrollTrigger } from "gsap/ScrollTrigger";
+    // gsap.registerPlugin(ScrollTrigger);
+
+    // gsap.to("#home-bg-gradient", {
+    //     background: "linear-gradient(180deg, white, white)",
+    //     scrollTrigger: {
+    //         trigger: "#body",
+    //         start: "top top",
+    //         end: "bottom bottom",
+    //         markers: true,
+    //         scrub: true,
+    //     }
+    // });
+</script>
