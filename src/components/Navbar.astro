@@ -1,16 +1,25 @@
 ---
 import { BsGithub } from "react-icons/bs";
+const slug = Astro.url.pathname;
 ---
 
 <nav
 id="navbar"
-class="flex flex-row w-full justify-end items-center rounded-xl
+class="flex flex-row w-full justify-end items-center rounded-md
 gap-5 font-bold mb-auto text-primary shadow-md shadow-accent py-3 px-5
 -translate-y-36 md:gap-10 md:py-5 md:px-7"
 >
+
+    <a
+    href="/"
+    class={"md:text-xl cursor-pointer " + ((slug !== "/") ? "opacity-60" : "")}
+    >
+        Home
+    </a>
+
     <a
     href="/contact"
-    class="md:text-xl cursor-pointer"
+    class={"md:text-xl cursor-pointer " + ((slug !== "/contact") ? "opacity-60" : "")}
     >
         Contact
     </a>
