@@ -5,9 +5,10 @@ const slug = Astro.url.pathname;
 
 <nav
 id="navbar"
-class="flex flex-row w-full justify-end items-center rounded-md
-gap-5 font-bold mb-auto text-primary shadow-md shadow-accent py-3 px-5
--translate-y-36 md:gap-10 md:py-5 md:px-7"
+class={"flex flex-row w-full justify-end items-center rounded-md " +
+"gap-5 font-bold mb-auto text-primary shadow-md shadow-accent py-3 px-5 " +
+"md:gap-10 md:py-5 md:px-7 " +
+((import.meta.env.DEV && import.meta.env.PUBLIC_SKIP_INTRO === "true") ? "" : "-translate-y-36")}
 >
 
     <a

@@ -1,4 +1,5 @@
 ---
+import Homepage from "../components/Homepage.astro";
 import Intro from "../components/Intro.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
@@ -6,13 +7,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout>
     <div
     id="home-bg-gradient"
-    class="fixed top-0 left-0 w-screen h-screen -z-10 opacity-0 trasnlate-y-52"
+    class={"fixed top-0 left-0 w-screen h-screen -z-10 " +
+    ((import.meta.env.DEV && import.meta.env.PUBLIC_SKIP_INTRO === "true") ? "" : "opacity-0 translate-y-52")
+    }
     style={{
         background: "linear-gradient(180deg, white, var(--accent))"
     }}
     />
 
-    <Intro />
+    {
+        (import.meta.env.PROD || import.meta.env.PUBLIC_SKIP_INTRO !== "true") &&
+        <Intro />
+    }
+    
+
+    <Homepage />
 </BaseLayout>
 
 <style is:global>
@@ -82,20 +91,3 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         }
     }
 </style>
-
-<script>
-    // import gsap from "gsap";
-    // import { ScrollTrigger } from "gsap/ScrollTrigger";
-    // gsap.registerPlugin(ScrollTrigger);
-
-    // gsap.to("#home-bg-gradient", {
-    //     background: "linear-gradient(180deg, white, white)",
-    //     scrollTrigger: {
-    //         trigger: "#body",
-    //         start: "top top",
-    //         end: "bottom bottom",
-    //         markers: true,
-    //         scrub: true,
-    //     }
-    // });
-</script>
