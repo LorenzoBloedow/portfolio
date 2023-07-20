@@ -1,14 +1,239 @@
 ---
 import Container from "./Container.astro";
-import { PiPersonArmsSpreadBold } from "react-icons/pi"
+import { GoSmiley } from "react-icons/go"
+import CodeGuided from "./Websites/CodeGuided";
+import DeveloperLookup from "./Websites/DeveloperLookup";
+import { SiNextdotjs, SiRedux, SiTailwindcss } from "react-icons/si";
+import TechTooltip from "./Websites/TechTooltip";
 ---
 
-
-<div
+<main
 id="homepage"
-class={"flex-col gap-6 " + 
+class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 " + 
 ((import.meta.env.DEV && import.meta.env.PUBLIC_SKIP_INTRO === "true") ? "flex" : "hidden")
 }
 >
+    <h2
+    class="text-4xl md:text-5xl lg:text-6xl text-center font-bold md:mb-4"
+    >
+        About Me
+    </h2>
+    <div
+    class="md:h-44 flex gap-2"
+    >
+        <div
+        class="relative"
+        >
+            <Container
+            tailwindClass="absolute -top-4 -left-4 invisible md:visible"
+            />
+            <Container
+            tailwindClass="sm:w-80 md:w-[27rem] lg:w-[40rem] items-center text-center"
+            >
+                <div
+                class="flex gap-3 items-center text-2xl sm:text-3xl lg:text-4xl"
+                >
+                    <p
+                    class="font-bold"
+                    >
+                        Lorenzo Bloedow
+                    </p>
+                    <GoSmiley
+                    className="stroke-[1px]"
+                    />
+                </div>
+                <p
+                class="text-xs sm:text-sm lg:text-base lg:w-[30rem]"
+                >
+                    I’m a front-end developer passionate about implementing functional{" "}
+                    user interfaces and finding awesome ways of representing data
+                </p>
+            </Container>
+        </div>
+        <div
+        class="hidden md:block relative w-52 h-52 lg:w-96 lg:h-96 lg:-top-20 lg:-right-14"
+        >
+            <SiNextdotjs
+            id="orb-next"
+            data-tooltip-id="stack-next"
+            data-tooltip-content="Next.js, my favorite framework for building web apps"
+            className={"w-28 h-28 absolute top-0 right-2 rounded-full shadow-lg shadow-accent " +
+            "cursor-pointer lg:w-52 lg:h-52 border-2 border-accent"}
+            />
+            <TechTooltip
+            client:idle
+            id="stack-next"
+            />
+            
+            <div
+            id="orb-redux"
+            data-tooltip-id="stack-redux"
+            data-tooltip-content="Redux, my favorite state management library"
+            class="rounded-full w-16 h-16 flex justify-center items-center p-4 bg-secondary
+            absolute bottom-14 left-7 shadow-lg shadow-accent cursor-pointer lg:w-32 lg:h-32
+            lg:p-9 lg:bottom-20 lg:left-12 border-2 border-accent"
+            >
+                <SiRedux
+                className="w-full h-full fill-white"
+                />
+            </div>
+            <TechTooltip
+            client:idle
+            id="stack-redux"
+            />
 
-</div>
+            <div
+            id="orb-tailwindcss"
+            class="rounded-full w-16 h-16 flex justify-center items-center p-4 bg-secondary
+            absolute bottom-4 right-3 shadow-lg shadow-accent cursor-pointer lg:w-32 lg:h-32
+            lg:p-9 border-2 border-accent"
+            data-tooltip-id="stack-tailwindcss"
+            data-tooltip-content="Tailwind CSS, my favorite CSS-in-JS tool"
+            >
+                <SiTailwindcss
+                className="w-full h-full fill-white"
+                />
+            </div>
+            <TechTooltip
+            client:idle
+            id="stack-tailwindcss"
+            />
+        </div>
+    </div>
+
+    <div
+    class="mt-5 flex flex-col gap-2.5"
+    >
+        <h2
+        class="text-4xl md:text-5xl lg:text-6xl text-center font-bold"
+        >
+            Projects
+        </h2>
+
+        <section
+        class="flex flex-col items-center"
+        >
+            <h3
+            class="text-2xl md:text-3xl lg:text-4xl text-center font-bold mb-5"
+            >
+                Websites
+            </h3>
+
+            <div
+            class="flex flex-col items-center gap-16"
+            >
+                <div
+                class="rounded-md h-80 overflow-clip w-60 sm:w-80 md:w-[28rem] md:h-96 lg:w-[60rem] lg:h-[30rem]"
+                >
+                    <Container
+                    tailwindClass="overflow-y-auto overflow-x-hidden minimalScrollbar"
+                    >
+                        <CodeGuided
+                        client:only="react"
+                        />
+                    </Container>
+                </div>
+                <div
+                class="rounded-md h-80 overflow-clip w-60 sm:w-80 md:w-[28rem] md:h-96 lg:w-[60rem] lg:h-[30rem]"
+                >
+                    <Container
+                    tailwindClass="overflow-y-auto overflow-x-hidden minimalScrollbar"
+                    >
+                        <DeveloperLookup
+                        client:only="react"
+                        />
+                    </Container>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    import gsap from "gsap";
+
+    type PreviousEventData = {
+        clientX: number,
+        clientY: number,
+        boundingRect: DOMRect
+    }
+    type PreviousEvent = {
+        next: PreviousEventData | null,
+        redux: PreviousEventData | null,
+        tailwindcss: PreviousEventData | null
+    }
+
+    const previous: PreviousEvent = {
+        next: null,
+        redux: null,
+        tailwindcss: null
+    }
+
+    function hoverEffect(e: PointerEvent, orb: HTMLElement, orbName: "next" | "redux" | "tailwindcss", previousEventStore: PreviousEvent) {
+        const boundingRect = orb.getBoundingClientRect();
+        const prevEvent = previousEventStore[orbName];
+
+        const localX = e.clientX - boundingRect.x;
+        let localXPrev: number | undefined;
+        if (prevEvent !== null) {
+            localXPrev = prevEvent.clientX - prevEvent.boundingRect.x;
+        }
+
+        const halfWidth = boundingRect.width / 2;
+        let isRight = localX < halfWidth;
+        if (localXPrev) {
+            if ((localX - localXPrev) > 0) {
+                isRight = true;
+            // Skip === comparison
+            } else if ((localX - localXPrev) < 0) {
+                isRight = false;
+            }
+        }
+
+
+        const localY = e.clientY - boundingRect.y;
+        let localYPrev: number | undefined;
+        if (prevEvent !== null) {
+            localYPrev = prevEvent.clientY - prevEvent.boundingRect.y;
+        }
+        
+        const halfHeight = boundingRect.height / 2;
+        let isTop = localY < halfHeight;
+        if (localYPrev) {
+            if ((localY - localYPrev) > 0) {
+                isTop = true;
+            // Skip === comparison
+            } else if ((localY - localYPrev) < 0) {
+                isTop = false;
+            }
+        }
+        
+        gsap.to(orb, {
+            translateX: `${isRight ? "" : "-"}${Math.min(10, ((boundingRect.width - localX) * 0.1))}`,
+            translateY: `${isTop ? "" : "-"}${Math.min(10, ((boundingRect.width - localY) * 0.1))}`,
+            duration: 0.6,
+            ease: "sine.inOut"
+        });
+
+        previousEventStore[orbName] = {
+            clientX: e.clientX,
+            clientY: e.clientY,
+            boundingRect: boundingRect
+        }
+    }
+
+    const nextOrb = document.getElementById("orb-next");
+    if (nextOrb) {
+        nextOrb.addEventListener("pointerover", e => hoverEffect(e, nextOrb, "next", previous));
+    }
+
+    const reduxOrb = document.getElementById("orb-redux");
+    if (reduxOrb) {
+        reduxOrb.addEventListener("pointerover", e => hoverEffect(e, reduxOrb, "redux", previous));
+    }
+
+    const tailwindcssOrb = document.getElementById("orb-tailwindcss");
+    if (tailwindcssOrb) {
+        tailwindcssOrb.addEventListener("pointerover", e => hoverEffect(e, tailwindcssOrb, "redux", previous));
+    }
+</script>
