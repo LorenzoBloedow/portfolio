@@ -1,10 +1,10 @@
 ---
-import Button from "./Button.astro";
+import Button from "./Button";
 ---
 
 <Button
 text="Show Me"
-color="primary"
+backgroundColor="var(--primary)"
 id="intro-button"
 shadow
 />
@@ -21,20 +21,12 @@ shadow
     const button = document.getElementById("intro-button");
 
     button?.addEventListener("pointerup", () => {
-        gsap.to("#intro-button", {
-            backgroundColor: "rgba(0, 0, 0, 0)",
-            color: "rgba(0, 0, 0, 0)",
-            duration: 0.5,
-            ease: "power4.out",
-            onComplete: () => {
-                button.remove();
-            }
-        });
+        button.remove();
         gsap.to("#intro-text", {
             scale: 10,
             opacity: 0,
-            duration: 0.5,
-            ease: "power4.out",
+            duration: 0.15,
+            ease: "linear",
             onComplete: () => {
                 const introText = document.getElementById("intro-text");
 
