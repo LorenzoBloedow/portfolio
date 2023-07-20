@@ -16,7 +16,7 @@ import Navbar from "../components/Navbar.astro";
 
     <body
     id="body"
-    class="p-5 w-full min-h-[100dvh] flex flex-col gap-6"
+    class="p-5 w-full min-h-[100dvh] flex flex-col gap-6 minimalScrollbar"
     >
         <header>
             <Navbar />
@@ -27,7 +27,7 @@ import Navbar from "../components/Navbar.astro";
 </html>
 
 
-<style>
+<style is:global>
     @font-face {
         font-family: "Climate Crisis";
         src: url("/fonts/ClimateCrisis.ttf");
@@ -52,9 +52,25 @@ import Navbar from "../components/Navbar.astro";
         --primary: rgb(76, 78, 230);
         --secondary: rgb(35, 34, 102);
         --accent: rgb(147, 175, 234);
+        --light: rgb(59 130 246 / 0.1);
     }
 
     *, *:before, *:after {
         box-sizing: inherit;
+    }
+
+    .minimalScrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: var(--accent);
+    }
+
+    .minimalScrollbar::-webkit-scrollbar {
+        width: 2px;
+        background-color: transparent;
+    }
+
+    .minimalScrollbar::-webkit-scrollbar-thumb {
+        background-color: var(--accent);
+        border-radius: 10px;
     }
 </style>
