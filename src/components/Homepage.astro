@@ -58,7 +58,9 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 " +
             data-tooltip-id="stack-next"
             data-tooltip-content="Next.js, my favorite framework for building web apps"
             className={"w-28 h-28 absolute top-0 right-2 rounded-full shadow-lg shadow-accent " +
-            "cursor-pointer lg:w-52 lg:h-52 border-2 border-accent"}
+            "cursor-pointer lg:w-52 lg:h-52 border-2 border-accent hover:fill-black " +
+            "transition duration-100 hover:border-0"
+            }
             />
             <TechTooltip
             client:idle
@@ -71,7 +73,8 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 " +
             data-tooltip-content="Redux, my favorite state management library"
             class="rounded-full w-16 h-16 flex justify-center items-center p-4 bg-secondary
             absolute bottom-14 left-7 shadow-lg shadow-accent cursor-pointer lg:w-32 lg:h-32
-            lg:p-9 lg:bottom-20 lg:left-12 border-2 border-accent"
+            lg:p-9 lg:bottom-20 lg:left-12 border-2 border-accent hover:bg-[#774bdb]
+            transition duration-100 hover:border-0"
             >
                 <SiRedux
                 className="w-full h-full fill-white"
@@ -86,7 +89,8 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 " +
             id="orb-tailwindcss"
             class="rounded-full w-16 h-16 flex justify-center items-center p-4 bg-secondary
             absolute bottom-4 right-3 shadow-lg shadow-accent cursor-pointer lg:w-32 lg:h-32
-            lg:p-9 border-2 border-accent"
+            lg:p-9 border-2 border-accent group hover:bg-[#76d5ec] transition duration-100
+            hover:border-0"
             data-tooltip-id="stack-tailwindcss"
             data-tooltip-content="Tailwind CSS, my favorite CSS-in-JS tool"
             >
