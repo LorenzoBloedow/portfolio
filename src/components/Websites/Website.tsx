@@ -1,11 +1,11 @@
-import type { FunctionComponent, ReactNode } from "react";
+import type { FunctionComponent } from "react";
 import { useState, cloneElement, Fragment } from "react";
 import PropagateLoader from "react-spinners/PropagateLoader";
-import { MdOutlineErrorOutline } from "react-icons/md";
 import { HiMiniEllipsisHorizontalCircle } from "react-icons/hi2";
 import TechTooltip from "./TechTooltip";
 import { AiOutlineMobile } from "react-icons/ai";
 import Button from "../Button";
+import ErrorMessage from "../ErrorMessage";
 
 interface WebsiteProps {
     name: string;
@@ -147,18 +147,9 @@ const Website: FunctionComponent<WebsiteProps> = ({ name, imageSrc, priority, te
                         }
                         {
                             (status === "error") &&
-                            <div
-                            className="flex flex-col items-center gap-1"
-                            >
-                                <MdOutlineErrorOutline
-                                className="text-red-500 w-10 h-10"
-                                />
-                                <p
-                                className="text-xs text-center text-red-500"
-                                >
-                                    Something went wrong while attempting to load this image
-                                </p>
-                            </div>
+                            <ErrorMessage
+                            message="Something went wrong while attempting to load this image"
+                            />
                         }
                     </div>
                 </div>
