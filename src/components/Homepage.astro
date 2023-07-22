@@ -5,6 +5,7 @@ import CodeGuided from "./Websites/CodeGuided";
 import DeveloperLookup from "./Websites/DeveloperLookup";
 import { SiNextdotjs, SiRedux, SiTailwindcss } from "react-icons/si";
 import TechTooltip from "./Websites/TechTooltip";
+import Heading from "./Heading.astro";
 ---
 
 <main
@@ -13,11 +14,12 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 " +
 ((import.meta.env.DEV && import.meta.env.PUBLIC_SKIP_INTRO === "true") ? "flex" : "hidden")
 }
 >
-    <h2
-    class="text-4xl md:text-5xl lg:text-6xl text-center font-bold md:mb-4"
+    <Heading
+    level={2}
     >
         About Me
-    </h2>
+    </Heading>
+    
     <div
     class="md:h-44 flex gap-2"
     >
@@ -108,20 +110,20 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 " +
     <div
     class="mt-5 flex flex-col gap-2.5"
     >
-        <h2
-        class="text-4xl md:text-5xl lg:text-6xl text-center font-bold"
+        <Heading
+        level={2}
         >
             Projects
-        </h2>
+        </Heading>
 
         <section
         class="flex flex-col items-center"
         >
-            <h3
-            class="text-2xl md:text-3xl lg:text-4xl text-center font-bold mb-5"
+            <Heading
+            level={3}
             >
                 Websites
-            </h3>
+            </Heading>
 
             <div
             class="flex flex-col items-center gap-16"
