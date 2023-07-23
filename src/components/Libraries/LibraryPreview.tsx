@@ -280,7 +280,7 @@ const LibraryPreview: FunctionComponent<LibraryPreviewProps> = ({ npmName }) => 
             backgroundColor="#789ce7"
             textColor="var(--secondary)"
             className="w-full"
-            onPointerUp={() => location.href = packageData!.repo}
+            href={packageData!.repo}
             />
         </div>
     );
