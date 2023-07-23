@@ -16,9 +16,13 @@ interface WebsiteProps {
         extra?: string[];
     }
     duration: string;
+    href: {
+        website: string,
+        repo: string
+    }
 }
  
-const Website: FunctionComponent<WebsiteProps> = ({ name, imageSrc, priority, technologies, duration }) => {
+const Website: FunctionComponent<WebsiteProps> = ({ name, imageSrc, priority, technologies, duration, href }) => {
     const [status, setStatus] = useState<"loading" | "error" | "success">("loading");
 
     const techIconsClassName = "w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 cursor-pointer transition-colors duration-150";
@@ -106,11 +110,13 @@ const Website: FunctionComponent<WebsiteProps> = ({ name, imageSrc, priority, te
                         text={"Visit " + name}
                         backgroundColor="#789ce7"
                         textColor="var(--secondary)"
+                        href={href.website}
                         />
                         <Button
                         text={"Visit Repository"}
                         backgroundColor="#789ce7"
                         textColor="var(--secondary)"
+                        href={href.repo}
                         />
                     </span>
                 </div>
@@ -161,6 +167,7 @@ const Website: FunctionComponent<WebsiteProps> = ({ name, imageSrc, priority, te
                 backgroundColor="#789ce7"
                 textColor="var(--secondary)"
                 className="w-40 md:w-56"
+                href={href.website}
                 />
             </span>
         </div>

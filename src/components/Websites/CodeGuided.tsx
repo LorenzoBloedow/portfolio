@@ -36,6 +36,10 @@ function CodeGuided() {
         }}
         priority="high"
         duration="2022 - 2023"
+        href={{
+            website: "https://codeguided.com",
+            repo: "https://github.com/CodeGuided/codeguided"
+        }}
         />
     );
 }

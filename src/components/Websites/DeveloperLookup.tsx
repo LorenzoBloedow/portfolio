@@ -25,6 +25,10 @@ function DeveloperLookup() {
         ]
         }}
         duration="2022 - 2023"
+        href={{
+            website: "https://developerlookup.com",
+            repo: "https://github.com/LorenzoBloedow/developerlookup"
+        }}
         />
     );
 }
