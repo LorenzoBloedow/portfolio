@@ -129,7 +129,6 @@ const Website: FunctionComponent<WebsiteProps> = ({ name, imageSrc, priority, te
                         decoding="async"
                         // @ts-expect-error experimental
                         fetchpriority={priority || "auto"}
-                        loading={(priority === "high") ? "eager" : "lazy"}
                         onLoad={() => setStatus("success")}
                         onError={() => setStatus("error")}
                         style={{
