@@ -1,4 +1,4 @@
-import type { FunctionComponent, ReactNode, PointerEvent } from "react";
+import { FunctionComponent, ReactNode, PointerEvent, createElement } from "react";
 
 interface ButtonProps {
     text: string;
@@ -11,34 +11,37 @@ interface ButtonProps {
     className?: string;
     id?: string;
     onPointerUp?: (e?: PointerEvent<HTMLButtonElement>) => void;
+    href?: string;
 }
  
 const Button: FunctionComponent<ButtonProps> = ({
     text, icon, backgroundColor = "accent",
     textColor = "#FFFFFF", shadow, ghost,
-    classId = "", className = "", id, onPointerUp
+    classId = "", className = "", id, onPointerUp,
+    href
 }) => {
-    return (
-        <button
-        id={id}
-        className={
-            "h-8 rounded-md px-3 py-2 font-bold flex justify-center gap-3" + " " +
-            "items-center text-xs tracking-wider text-white" + " " +
-            ((ghost) ? "border-2 " : "") + " " +
-            "transition-colors duration-500" + " " +
-            "hover:outline hover:outline-2 hover:outline-white hover:!text-white" + " " +
-            "md:text-sm md:h-10 md:px-5" + " " + classId + " " + className
-        }
-        style={{
+    const finalClassName = "h-8 rounded-md px-3 py-2 font-bold flex justify-center gap-3" + " " +
+    "items-center text-xs tracking-wider text-white cursor-pointer" + " " +
+    ((ghost) ? "border-2 " : "") + " " +
+    "transition-colors duration-500" + " " +
+    "hover:outline hover:outline-2 hover:outline-white hover:!text-white" + " " +
+    "md:text-sm md:h-10 md:px-5" + " " + classId + " " + className
+    
+    return createElement(href ? "a" : "button", {
+        id,
+        className: finalClassName,
+        style: {
             color: textColor,
             borderColor: backgroundColor,
             backgroundColor: ghost ? undefined : backgroundColor,
             filter: shadow ? "drop-shadow(3px 3px 2px var(--accent));" : ""
-        }}
-        onPointerUp={onPointerUp}
-        >
+        },
+        href,
+        onPointerUp
+    },
+        <>
             {icon} {text}
-        </button>
+        </>
     );
 }
  

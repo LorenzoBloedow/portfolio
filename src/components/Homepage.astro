@@ -7,11 +7,12 @@ import { SiNextdotjs, SiRedux, SiTailwindcss } from "react-icons/si";
 import TechTooltip from "./Websites/TechTooltip";
 import Heading from "./Heading.astro";
 import Libraries from "./Libraries/Libraries";
+import Button from "./Button";
 ---
 
 <main
 id="homepage"
-class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 " + 
+class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb-20 lg:mb-28 " + 
 ((import.meta.env.DEV && import.meta.env.PUBLIC_SKIP_INTRO === "true") ? "flex" : "hidden")
 }
 >
@@ -172,6 +173,33 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 " +
                     <Libraries client:visible />
                 </Container>
             </div>
+        </section>
+
+        <section
+        class="flex flex-col items-center mt-32 gap-3.5 lg:mt-40"
+        >
+            <div
+            class="relative p-4 w-96 flex justify-center items-center"
+            >
+                <Heading
+                level={3}
+                >
+                    See It For yourself,
+                    It's All Open Source
+                </Heading>
+                <div
+                class="rounded-full bg-green-500/40 w-48 h-48 md:w-56
+                md:h-56 lg:w-72 lg:h-72 lg absolute -z-10 blur-xl"
+                />
+            </div>
+
+            <Button
+            text="Visit GitHub Profile"
+            textColor="#78e77d"
+            backgroundColor="#000144"
+            className="px-10 py-5"
+            href="https://github.com/LorenzoBloedow"
+            />
         </section>
     </div>
 </main>
