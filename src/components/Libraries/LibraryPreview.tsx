@@ -6,9 +6,9 @@ import type { Library } from "./Libraries";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
-import { BsDownload, BsFileEarmark } from "react-icons/bs";
-import { MdOutlinePublish } from "react-icons/md";
-import { AiOutlineEdit } from "react-icons/ai";
+import { BsDownload, BsFileEarmark } from "@lorenzobloedow/react-icons/bs";
+import { MdOutlinePublish } from "@lorenzobloedow/react-icons/md";
+import { AiOutlineEdit } from "@lorenzobloedow/react-icons/ai";
 import TechTooltip from "../Websites/TechTooltip";
 import Button from "../Button";
 

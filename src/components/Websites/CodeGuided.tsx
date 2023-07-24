@@ -4,7 +4,7 @@ import {
     SiNextdotjs, SiTypescript, SiReact, SiRedux, SiFirebase, SiVercel, SiSentry,
     SiGreensock, SiTailwindcss, SiStorybook, SiJest, SiPlaywright, SiNodedotjs,
     SiTypeform, SiEslint
-} from "react-icons/si";
+} from "@lorenzobloedow/react-icons/si";
 
 function CodeGuided() {
     return (

@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'react';
-import { MdOutlineErrorOutline } from "react-icons/md";
+import { MdOutlineErrorOutline } from "@lorenzobloedow/react-icons/md";
     
 interface ErrorMessageProps {
     message?: string;

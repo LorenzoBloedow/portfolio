@@ -1,9 +1,9 @@
 import type { FunctionComponent } from "react";
 import { useState, cloneElement, Fragment } from "react";
 import PropagateLoader from "react-spinners/PropagateLoader";
-import { HiMiniEllipsisHorizontalCircle } from "react-icons/hi2";
+import { HiMiniEllipsisHorizontalCircle } from "@lorenzobloedow/react-icons/hi2";
 import TechTooltip from "./TechTooltip";
-import { AiOutlineMobile } from "react-icons/ai";
+import { AiOutlineMobile } from "@lorenzobloedow/react-icons/ai";
 import Button from "../Button";
 import ErrorMessage from "../ErrorMessage";
 

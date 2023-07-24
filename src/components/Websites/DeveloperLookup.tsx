@@ -3,7 +3,7 @@ import developerLookupImage from "../../images/developerlookup-home.png";
 import {
     SiNextdotjs, SiTypescript, SiReact, SiVercel, SiGithub,
     SiGreensock, SiTailwindcss, SiEslint, SiGooglemaps
-} from "react-icons/si";
+} from "@lorenzobloedow/react-icons/si";
 
 function DeveloperLookup() {
     return (
