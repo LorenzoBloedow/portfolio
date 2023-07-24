@@ -17,7 +17,7 @@
     "@lorenzobloedow/react-icons": "^1.0.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
-    "astro": "^2.8.5",
+    "astro": "^2.9.2",
     "gsap": "^3.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
