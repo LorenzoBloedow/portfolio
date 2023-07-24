@@ -68,8 +68,9 @@ const LibraryPreview: FunctionComponent<LibraryPreviewProps> = ({ npmName }) => 
                 });
                 setStatus("success");
             })
+            .catch(() => setStatus("error"));
         })
-        .catch(() => setStatus("error"))
+        .catch(() => setStatus("error"));
     }, [npmName]);
     
     if (status === "error") {
