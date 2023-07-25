@@ -1,5 +1,5 @@
 import Website from "./Website";
-import developerLookupImage from "../../images/developerlookup-home.png";
+import developerLookupImage from "../../images/developerlookup-home.webp";
 import {
     SiNextdotjs, SiTypescript, SiReact, SiVercel, SiGithub,
     SiGreensock, SiTailwindcss, SiEslint, SiGooglemaps

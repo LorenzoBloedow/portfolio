@@ -1,5 +1,5 @@
 import Website from "./Website";
-import codeguidedImage from "../../images/codeguided-home.png";
+import codeguidedImage from "../../images/codeguided-home.webp";
 import {
     SiNextdotjs, SiTypescript, SiReact, SiRedux, SiFirebase, SiVercel, SiSentry,
     SiGreensock, SiTailwindcss, SiStorybook, SiJest, SiPlaywright, SiNodedotjs,
