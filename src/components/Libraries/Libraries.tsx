@@ -16,7 +16,7 @@ function Libraries() {
     return (
         <div
         style={{
-            contentVisibility: "auto"
+            contain: "layout size style"
         }}
         className="flex flex-col lg:flex-row md:justify-center items-center gap-7 lg:gap-16"
         >
