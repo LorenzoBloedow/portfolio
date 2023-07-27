@@ -29,9 +29,6 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb
         class="relative"
         >
             <Container
-            tailwindClass="absolute -top-4 -left-4 invisible md:visible"
-            />
-            <Container
             tailwindClass="sm:w-80 md:w-[27rem] lg:w-[40rem] items-center text-center"
             >
                 <div
@@ -55,6 +52,9 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb
             </Container>
         </div>
         <div
+        style={{
+            contentVisibility: "auto"
+        }}
         class="hidden md:block relative w-52 h-52 lg:w-96 lg:h-96 lg:-top-20 lg:-right-14"
         >
             <SiNextdotjs

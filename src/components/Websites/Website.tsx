@@ -30,6 +30,9 @@ const Website: FunctionComponent<WebsiteProps> = ({ name, imageSrc, priority, te
 
     return (
         <div
+        style={{
+            contentVisibility: "auto"
+        }}
         className="flex flex-col gap-3 items-center relative"
         >
             <p
