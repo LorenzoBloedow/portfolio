@@ -117,6 +117,11 @@ const LibraryPreview: FunctionComponent<LibraryPreviewProps> = ({ npmName }) => 
                         />
                     </div>
                 </Container>
+
+				<Button
+				text="placeholder"
+				className="invisible"
+				/>
             </div>
         );
     }
