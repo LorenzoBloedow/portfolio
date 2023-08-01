@@ -18,7 +18,8 @@ function Libraries() {
         style={{
             contain: "layout size style"
         }}
-        className="flex flex-col lg:flex-row md:justify-center items-center gap-7 lg:gap-16"
+        className="flex flex-col lg:flex-row md:justify-center items-center gap-7 lg:gap-16
+		h-[37rem] sm:h-[38rem] md:h-[48rem] lg:h-[30rem]"
         >
             <LibraryPreview
             npmName={library}
