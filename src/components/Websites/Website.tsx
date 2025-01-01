@@ -113,6 +113,7 @@ const Website: FunctionComponent<WebsiteProps> = ({
 							backgroundColor="#789ce7"
 							textColor="var(--secondary)"
 							href={href.repo}
+							disabled={!href.repo}
 						/>
 					</span>
 				</div>
@@ -122,7 +123,7 @@ const Website: FunctionComponent<WebsiteProps> = ({
 				>
 					<div
 						className="h-20 sm:h-[8.44rem] flex justify-start
-                    items-start rounded-md overflow-clip lg:h-64"
+                    items-start rounded-md overflow-clip lg:h-64 w-72 lg:w-[30rem]"
 					>
 						<img
 							className="w-full h-full"

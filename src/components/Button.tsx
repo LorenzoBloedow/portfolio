@@ -30,7 +30,7 @@ const Button: FunctionComponent<ButtonProps> = ({
 	disabled,
 }) => {
 	const finalClassName =
-		"h-8 rounded-md py-2 font-bold flex justify-center gap-3 px-7" +
+		"h-8 rounded-md py-2 font-bold flex justify-center gap-3 px-2 lg:px-7" +
 		" " +
 		"items-center text-xs tracking-wider text-white cursor-pointer" +
 		" " +

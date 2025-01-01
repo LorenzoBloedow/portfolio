@@ -2,6 +2,7 @@
 import Container from "./Container.astro";
 import { GoSmiley } from "@lorenzobloedow/react-icons/go"
 import CodeGuided from "./Websites/CodeGuided";
+import Arbiti from "./Websites/Arbiti"
 import DeveloperLookup from "./Websites/DeveloperLookup";
 import { SiNextdotjs, SiRedux, SiTailwindcss } from "@lorenzobloedow/react-icons/si";
 import TechTooltip from "./Websites/TechTooltip";
@@ -119,11 +120,11 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb
         <section
         class="flex flex-col items-center lg:items-start lg:-mt-2"
         >
-        <Heading
-        level={2}
-        >
-            Projects
-        </Heading>
+            <Heading
+            level={2}
+            >
+                Projects
+            </Heading>
             <Heading
             level={3}
             >
@@ -133,6 +134,13 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb
             <div
             class="flex flex-col items-center gap-20 w-full"
             >
+                <Container
+                tailwindClass="overflow-y-auto overflow-x-hidden minimalScrollbar"
+                >
+                    <Arbiti
+                    client:only="react"
+                    />
+                </Container>
                 <Container
                 tailwindClass="overflow-y-auto overflow-x-hidden minimalScrollbar"
                 >
@@ -161,7 +169,7 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb
             </Heading>
 
             <Container
-            tailwindClass="overflow-auto minimalScrollbar md:p-8 w-[20rem] md:w-[30rem] lg:w-[62rem]"
+            tailwindClass="overflow-auto minimalScrollbar md:p-8 w-[18rem] md:w-[30rem] lg:w-[62rem]"
             >
                 <Libraries client:only="react" />
             </Container>
