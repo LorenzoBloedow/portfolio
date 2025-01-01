@@ -38,22 +38,18 @@ const LibrarySelector: FunctionComponent<LibrarySelectorProps> = ({ changeLibrar
     ));
 
     return (
-        <div
-        className="flex flex-col gap-3 sm:gap-5 lg:gap-7 md:mb-auto"
-        >
-            <p
-            className="font-bold text-lg sm:text-xl lg:text-2xl text-center"
-            >
-                Select a Library
-            </p>
-            <div
-            className="flex flex-wrap justify-center gap-x-7 gap-y-5 sm:w-56
+		<div className="flex flex-col gap-3 sm:gap-5 lg:gap-7 md:mb-auto my-auto">
+			<p className="font-bold text-lg sm:text-xl lg:text-2xl text-center">
+				Select a Library
+			</p>
+			<div
+				className="flex flex-wrap justify-center gap-x-7 gap-y-5 sm:w-56
             md:w-80 sm:gap-x-9 sm:gap-y-6 md:justify-between lg:gap-y-10"
-            >
-                {libraries}
-            </div>
-        </div>
-    );
+			>
+				{libraries}
+			</div>
+		</div>
+	);
 }
  
 export default LibrarySelector;

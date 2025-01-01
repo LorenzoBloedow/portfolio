@@ -1,35 +1,44 @@
 ---
 import { LuGithub } from "@lorenzobloedow/react-icons/lu";
-const slug = Astro.url.pathname;
+import { SiUpwork } from "@lorenzobloedow/react-icons/si";
 ---
 
 <nav
 id="navbar"
-class={"flex flex-row w-full justify-end items-center rounded-md " +
-"gap-5 font-bold mb-auto text-primary shadow-md shadow-accent py-3 px-5 " +
-"md:gap-10 md:py-5 md:px-7 " +
+class={"flex flex-row w-full justify-center items-center rounded-md " +
+"gap-5 font-semibold mb-auto text-primary py-3 px-5 bg-blue-100/50 backdrop-blur-sm" +
+"md:gap-10 md:py-3 md:px-7 " +
 ((import.meta.env.DEV && import.meta.env.PUBLIC_SKIP_INTRO === "true") ? "" : "-translate-y-36")}
 >
 
     <a
     href="/"
-    class={"md:text-xl cursor-pointer hover:brightness-75 " + ((slug !== "/") ? "opacity-60" : "")}
+    class={"cursor-pointer hover:brightness-75"}
     >
         Home
     </a>
-
     <a
     href="mailto:lorenzobloedow@gmail.com"
-    class={"md:text-xl cursor-pointer hover:brightness-75 " + ((slug !== "/contact") ? "opacity-60" : "")}
+    class={"cursor-pointer hover:brightness-75"}
     >
         Contact
     </a>
     <a
     href="https://github.com/LorenzoBloedow/portfolio"
     class="cursor-pointer hover:brightness-75 "
+    target="_blank"
     >
         <LuGithub
-        className="w-7 h-7 md:w-10 md:h-10 border-2 rounded-full border-primary p-0.5 md:p-1"
+        className="w-7 h-7 p-0.5 md:p-1"
+        />
+    </a>
+    <a href="https://www.upwork.com/freelancers/~014619bcc686b0ce79"
+    class="cursor-pointer hover:brightness-75"
+    target="_blank"
+    >
+
+        <SiUpwork
+        className="w-7 h-7 p-0.5 md:p-1"
         />
     </a>
 </nav>

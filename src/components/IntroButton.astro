@@ -39,8 +39,8 @@ shadow
                 })
                 gsap.to("#navbar", {
                     translateY: 0,
-                    duration: 3,
-                    ease: "elastic.out(1, 0.3)",
+                    duration: 0.5,
+                    ease: "ease.out(1, 0.3)",
                     onStart: () => {
                         const intro = document.getElementById("intro");
                         intro?.remove();

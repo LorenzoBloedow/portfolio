@@ -12,24 +12,18 @@ import Button from "./Button";
 
 <main
 id="homepage"
-class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb-20 lg:mb-28 " + 
+class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb-20 lg:mb-28 w-full " + 
 ((import.meta.env.DEV && import.meta.env.PUBLIC_SKIP_INTRO === "true") ? "flex" : "hidden")
 }
 >
-    <Heading
-    level={2}
-    >
-        About Me
-    </Heading>
-    
     <div
-    class="md:h-44 flex gap-2"
+    class="md:h-44 flex gap-2 mx-auto"
     >
         <div
-        class="relative"
+        class="relative ml-auto"
         >
             <Container
-            tailwindClass="sm:w-80 md:w-[27rem] lg:w-[40rem] flex flex-col items-center text-center"
+            tailwindClass="flex flex-col items-center text-center mt-20"
             >
                 <div
                 class="flex gap-3 items-center text-2xl sm:text-3xl lg:text-4xl"
@@ -46,15 +40,26 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb
                 <p
                 class="text-xs sm:text-sm lg:text-base lg:w-[30rem]"
                 >
-                    I’m a full-stack web developer passionate about solving problems and creating beautiful, yet functional web applications.
+                    I’m a full-stack web developer passionate about solving problems and creating beautiful, yet functional web applications.{" "}
+                    I've always attempted to monetize everything I make however I also have significant open-source contributions to projects such as{" "}
+                    Vitest which you can explore in my GitHub profile.
                 </p>
+                <a 
+                href="https://www.upwork.com/freelancers/~014619bcc686b0ce79"
+                target="_blank">
+                    <Button
+                    text="Hire Me"
+                    textColor="#007328"
+                    backgroundColor="#9effb8"
+                    />
+                </a>
             </Container>
         </div>
         <div
         style={{
             contain: "layout size style"
         }}
-        class="hidden md:block relative w-52 h-52 lg:w-96 lg:h-96 lg:-top-20 lg:-right-14"
+        class="hidden md:block relative w-52 h-52 lg:w-96 lg:h-96"
         >
             <SiNextdotjs
             id="orb-next"
@@ -109,17 +114,16 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb
     </div>
 
     <div
-    class="mt-5 flex flex-col gap-2.5"
+    class="mt-52 flex flex-col items-center w-full"
     >
+        <section
+        class="flex flex-col items-center lg:items-start lg:-mt-2"
+        >
         <Heading
         level={2}
         >
             Projects
         </Heading>
-
-        <section
-        class="flex flex-col items-center"
-        >
             <Heading
             level={3}
             >
@@ -127,7 +131,7 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb
             </Heading>
 
             <div
-            class="flex flex-col items-center gap-16"
+            class="flex flex-col items-center gap-20 w-full"
             >
                 <Container
                 tailwindClass="overflow-y-auto overflow-x-hidden minimalScrollbar"
@@ -148,7 +152,7 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb
         </section>
 
         <section
-        class="flex flex-col items-center mt-5"
+        class="flex flex-col items-start mt-32 "
         >
             <Heading
             level={3}
@@ -156,19 +160,15 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb
                 Libraries
             </Heading>
 
-            <div
-            class="rounded-md h-80 overflow-clip w-60 sm:w-80 md:w-[28rem] md:h-96 lg:w-[60rem] lg:h-[34rem]"
+            <Container
+            tailwindClass="overflow-auto minimalScrollbar md:p-8 w-[20rem] md:w-[30rem] lg:w-[62rem]"
             >
-                <Container
-                tailwindClass="overflow-y-auto overflow-x-hidden minimalScrollbar md:p-8"
-                >
-                    <Libraries client:only="react" />
-                </Container>
-            </div>
+                <Libraries client:only="react" />
+            </Container>
         </section>
 
         <section
-        class="flex flex-col items-center mt-32 gap-3.5 lg:mt-40"
+        class="flex flex-col items-center mx-auto mt-32 gap-3.5 lg:mt-40"
         >
             <div
             class="relative p-4 w-96 flex justify-center items-center"

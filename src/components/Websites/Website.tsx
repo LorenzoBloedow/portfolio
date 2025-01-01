@@ -41,7 +41,7 @@ const Website: FunctionComponent<WebsiteProps> = ({
 	const ellipsisId = name + "-tech-ellipsis";
 
 	return (
-		<div className="flex flex-col gap-3 items-center relative">
+		<div className="flex flex-col gap-3 items-center lg:items-start relative">
 			<p
 				className="text-[0.5rem] sm:text-[0.6rem] md:text-xs flex justify-center items-center gap-1 -mb-2
             md:-mb-1 lg:text-sm lg:mr-auto group"
@@ -50,7 +50,7 @@ const Website: FunctionComponent<WebsiteProps> = ({
 				Mobile-first design
 			</p>
 
-			<h4 className="text-xl md:text-3xl lg:text-4xl lg:mb-5 font-bold text-center">
+			<h4 className="text-xl lg:mb-5 font-bold text-center">
 				{name}
 				<span className="hidden lg:inline">.com</span>
 			</h4>
@@ -117,12 +117,12 @@ const Website: FunctionComponent<WebsiteProps> = ({
 					</span>
 				</div>
 				<div
-					className="m-3 lg:p-0 rounded-md flex
-                flex-col items-center justify-center gap-2 mt-3 md:m-4 lg:mt-0"
+					className="lg:p-0 rounded-md flex
+                flex-col items-center justify-center gap-2 mt-3 lg:mt-0"
 				>
 					<div
-						className="w-40 h-20 sm:w-[15.8rem] sm:h-[8.44rem] flex justify-center
-                    items-center rounded-md overflow-clip lg:w-[30rem] lg:h-64"
+						className="h-20 sm:h-[8.44rem] flex justify-start
+                    items-start rounded-md overflow-clip lg:h-64"
 					>
 						<img
 							className="w-full h-full"
@@ -152,7 +152,7 @@ const Website: FunctionComponent<WebsiteProps> = ({
 					</div>
 				</div>
 			</div>
-			<span className="lg:hidden">
+			<div className="lg:hidden mx-auto">
 				<Button
 					text={"Visit " + name}
 					backgroundColor="#789ce7"
@@ -161,7 +161,7 @@ const Website: FunctionComponent<WebsiteProps> = ({
 					href={href.website}
 					disabled={defunct}
 				/>
-			</span>
+			</div>
 		</div>
 	);
 };

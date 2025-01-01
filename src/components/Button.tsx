@@ -30,7 +30,7 @@ const Button: FunctionComponent<ButtonProps> = ({
 	disabled,
 }) => {
 	const finalClassName =
-		"h-8 rounded-md px-3 py-2 font-bold flex justify-center gap-3" +
+		"h-8 rounded-md py-2 font-bold flex justify-center gap-3 px-7" +
 		" " +
 		"items-center text-xs tracking-wider text-white cursor-pointer" +
 		" " +
@@ -38,9 +38,9 @@ const Button: FunctionComponent<ButtonProps> = ({
 		" " +
 		"transition-colors duration-500" +
 		" " +
-		"enabled:hover:outline enabled:hover:outline-2 enabled:hover:outline-white enabled:hover:!text-white" +
+		"enabled:hover:outline enabled:hover:outline-1 enabled:hover:outline-white" +
 		" " +
-		"md:text-sm md:h-10 md:px-5" +
+		"md:text-sm md:h-10" +
 		" " +
 		classId +
 		" " +
