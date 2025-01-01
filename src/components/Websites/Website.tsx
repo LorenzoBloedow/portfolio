@@ -41,12 +41,7 @@ const Website: FunctionComponent<WebsiteProps> = ({
 	const ellipsisId = name + "-tech-ellipsis";
 
 	return (
-		<div
-			style={{
-				contain: "layout size style",
-			}}
-			className="flex flex-col gap-3 items-center relative"
-		>
+		<div className="flex flex-col gap-3 items-center relative">
 			<p
 				className="text-[0.5rem] sm:text-[0.6rem] md:text-xs flex justify-center items-center gap-1 -mb-2
             md:-mb-1 lg:text-sm lg:mr-auto group"
@@ -122,8 +117,8 @@ const Website: FunctionComponent<WebsiteProps> = ({
 					</span>
 				</div>
 				<div
-					className="p-3 border-[1px] lg:p-0 rounded-md border-accent flex
-                flex-col items-center justify-center gap-2 mt-3 md:p-4 lg:mt-0"
+					className="m-3 lg:p-0 rounded-md flex
+                flex-col items-center justify-center gap-2 mt-3 md:m-4 lg:mt-0"
 				>
 					<div
 						className="w-40 h-20 sm:w-[15.8rem] sm:h-[8.44rem] flex justify-center

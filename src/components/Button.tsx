@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode, PointerEvent, createElement } from "react";
+import { FunctionComponent, ReactNode, PointerEvent } from "react";
 
 interface ButtonProps {
 	text: string;
@@ -48,12 +48,11 @@ const Button: FunctionComponent<ButtonProps> = ({
 		" " +
 		"disabled:text-slate-500 disabled:cursor-not-allowed";
 
-	return createElement(
-		"button",
-		{
-			id,
-			className: finalClassName,
-			style: {
+	return (
+		<button
+			id={id}
+			className={finalClassName}
+			style={{
 				color: disabled ? "#868786" : textColor,
 				borderColor: backgroundColor,
 				backgroundColor: ghost
@@ -62,15 +61,14 @@ const Button: FunctionComponent<ButtonProps> = ({
 					? "#dedfe0"
 					: backgroundColor,
 				filter: shadow ? "drop-shadow(3px 3px 2px var(--accent));" : "",
-			},
-			...(href ? { onClick: () => window.open(href, "_blank") } : {}),
-			onPointerUp,
-			disabled,
-		},
-		<>
+			}}
+			{...(href ? { onClick: () => window.open(href, "_blank") } : {})}
+			onPointerUp={onPointerUp}
+			disabled={disabled}
+		>
 			{icon} {text}
-		</>
+		</button>
 	);
 };
- 
+
 export default Button;

@@ -46,8 +46,7 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb
                 <p
                 class="text-xs sm:text-sm lg:text-base lg:w-[30rem]"
                 >
-                    I’m a front-end developer passionate about implementing functional{" "}
-                    user interfaces and finding awesome ways of representing data
+                    I’m a full-stack web developer passionate about solving problems and creating beautiful, yet functional web applications.
                 </p>
             </Container>
         </div>
@@ -130,28 +129,21 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb
             <div
             class="flex flex-col items-center gap-16"
             >
-                <div
-                class="rounded-md h-80 overflow-clip w-60 sm:w-80 md:w-[28rem] md:h-96 lg:w-[60rem] lg:h-[30rem]"
+                <Container
+                tailwindClass="overflow-y-auto overflow-x-hidden minimalScrollbar"
                 >
-                    <Container
-                    tailwindClass="overflow-y-auto overflow-x-hidden minimalScrollbar"
-                    >
-                        <CodeGuided
-                        client:only="react"
-                        />
-                    </Container>
-                </div>
-                <div
-                class="rounded-md h-80 overflow-clip w-60 sm:w-80 md:w-[28rem] md:h-96 lg:w-[60rem] lg:h-[30rem]"
+                    <CodeGuided
+                    client:only="react"
+                    />
+                </Container>
+
+                <Container
+                tailwindClass="overflow-y-auto overflow-x-hidden minimalScrollbar"
                 >
-                    <Container
-                    tailwindClass="overflow-y-auto overflow-x-hidden minimalScrollbar"
-                    >
-                        <DeveloperLookup
-                        client:only="react"
-                        />
-                    </Container>
-                </div>
+                    <DeveloperLookup
+                    client:only="react"
+                    />
+                </Container>
             </div>
         </section>
 
@@ -184,8 +176,8 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb
                 <Heading
                 level={3}
                 >
-                    See It For yourself,
-                    It's All Open Source
+                    See for yourself,
+                    It's all open source
                 </Heading>
                 <div
                 class="rounded-full bg-green-500/40 w-48 h-48 md:w-56
@@ -193,13 +185,14 @@ class={"flex-col items-center gap-6 lg:gap-12 text-secondary md:mt-5 mb-10 md:mb
                 />
             </div>
 
-            <Button
-            text="Visit GitHub Profile"
-            textColor="#78e77d"
-            backgroundColor="#000144"
-            className="px-10 py-5"
-            href="https://github.com/LorenzoBloedow"
-            />
+            <a target="_blank" href="https://github.com/LorenzoBloedow">
+                <Button
+                text="Visit GitHub Profile"
+                textColor="#78e77d"
+                backgroundColor="#000144"
+                className="px-10 py-5"
+                />
+            </a>
         </section>
     </div>
 </main>

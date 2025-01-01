@@ -7,7 +7,9 @@ export type Library = "tailwind-safe-container" | "firestore-get-doc-wrapper" | 
 "programming-colors" | "bloatedmath";
 
 function Libraries() {
-    const [library, setLibrary] = useState<Library>("tailwind-shades-for-custom-colors");
+    const [library, setLibrary] = useState<Library>(
+		"detect-programming-language"
+	);
 
     function changeLibrary(library: Library) {
         setLibrary(library);

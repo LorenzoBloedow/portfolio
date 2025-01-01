@@ -6,9 +6,16 @@ interface LibrarySelectorProps {
 }
 
 const LibrarySelector: FunctionComponent<LibrarySelectorProps> = ({ changeLibrary }) => {
-    const libraryNames = ["tailwind-safe-container", "firestore-get-doc-wrapper", "is-string-functional-component",
-    "is-consecutive-day", "detect-programming-language", "tailwind-shades-for-custom-colors",
-    "programming-colors", "bloatedmath"] as const;
+    const libraryNames = [
+		"detect-programming-language",
+		"firestore-get-doc-wrapper",
+		"is-string-functional-component",
+		"is-consecutive-day",
+		"tailwind-safe-container",
+		"tailwind-shades-for-custom-colors",
+		"programming-colors",
+		"bloatedmath",
+	] as const;
 
     const libraries = libraryNames.map(name => (
         <button
