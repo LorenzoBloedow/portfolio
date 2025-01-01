@@ -7,7 +7,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout>
     <div
     id="home-bg-gradient"
-    class={"fixed top-0 left-0 w-screen h-screen -z-10 bg-[#000144] " +
+    class={"fixed top-0 left-0 w-[120vw] h-[120vh] -z-10 bg-[#000144] " +
     ((import.meta.env.DEV && import.meta.env.PUBLIC_SKIP_INTRO === "true") ? "" : "opacity-0 translate-y-52")
     }
     style={{
